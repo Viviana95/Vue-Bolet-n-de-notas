@@ -4,6 +4,6 @@
 </script>
 
 <template>
-<button type="button" class="btn btn-primary btn-lg" href="./ReportView.vue">Boletin</button>
 
+<RouterLink to="/report"><button type="button" class="btn btn-primary btn-lg mt-5">Ir al boletin de notas</button></RouterLink>
 </template>
