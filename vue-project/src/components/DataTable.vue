@@ -2,10 +2,11 @@
 export default {
 props:{
   students: String,
+
 },
 methods: {
  note(){
-   return this.note > 5? si:no;
+   return this.note === 5? "si":no;
  } 
 },
 }
@@ -23,7 +24,7 @@ methods: {
             <th>{{student.name}}</th>
             <th>{{student.signature}}</th>
             <th>{{student.note}}</th>
-            <th v-if="note">{{student.note}}</th>
+            <!-- <th v-if="note">{{student.note}}</th> -->
           </tr>
           
         </table>

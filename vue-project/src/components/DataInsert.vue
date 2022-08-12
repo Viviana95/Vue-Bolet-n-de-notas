@@ -8,13 +8,22 @@ export default {
       students: [],
       name: "",
       signature: "",
-      note: "",
+     // note: "",
       id: "",
       
 
     };
   },
   methods: {
+    selectSignature(){
+      this.signature = ref("")
+    },
+
+    notas(){
+      //if(this.note == 5){return "Suspenso"};
+       //return this.note === 5 ? "ok":"mal";
+    },
+
     addStudent() {
       if (this.name.length === 0) { return };
       if (this.signature.length === 0) { return };
@@ -28,9 +37,11 @@ export default {
           note: this.note,
         });
       this.name = "";
-      this.signature = "";
       this.note = "";
-    }
+      this.signature = "";
+      
+    },
+    
   },
   components: { DataTable }
 }
@@ -44,19 +55,16 @@ export default {
           <span class="input-group-text" id="basic-addon1">Nombre</span>
           <input type="text" class="form-control" v-model="name">
         </div>
-        <!--<div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01">Options</label>
-          <select class="form-select" id="inputGroupSelect01" v-model="probar">
-            <option selected>Choose...</option>
-            <option value="1">Matemáticas</option>
-            <option value="2">Español</option>
-            <option value="3">Historia</option>
-          </select>
-        </div>-->
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Materia</span>
-          <input type="text" class="form-control" v-model="signature">
+          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+          <select class="form-select" id="inputGroupSelect01" v-model="signature">
+            <option selected>Choose...</option>
+            <option value="Matemáticas">Matemáticas</option>
+            <option value="Español">Español</option>
+            <option value="Historia">Historia</option>
+          </select>
         </div>
+        
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">Nota</span>
           <input type="text" class="form-control" v-model="note">
@@ -75,6 +83,7 @@ export default {
             <th>{{ student.name }}</th>
             <th>{{ student.signature }}</th>
             <th>{{ student.note }}</th>
+            
 
           </tr>
 
