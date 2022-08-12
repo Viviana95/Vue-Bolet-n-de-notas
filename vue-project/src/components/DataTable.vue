@@ -1,8 +1,13 @@
 <script>
 export default {
 props:{
-  student: String,
-}
+  students: String,
+},
+methods: {
+ note(){
+   return this.note > 5? si:no;
+ } 
+},
 }
 </script>
 <template>
@@ -15,9 +20,10 @@ props:{
             <th>Cualificación</th>
           </tr>
           <tr v-for="(student,key) in students" :key="student.id">
-            <th>{{student}}</th>
+            <th>{{student.name}}</th>
             <th>{{student.signature}}</th>
             <th>{{student.note}}</th>
+            <th v-if="note">{{student.note}}</th>
           </tr>
           
         </table>
