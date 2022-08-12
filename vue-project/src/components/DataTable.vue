@@ -1,24 +1,23 @@
 <script>
 export default {
-data() {
-  return {
-    
-  }
-},
+props:{
+  student: String,
+}
 }
 </script>
 <template>
-  <div class="col-md-8 col-xs-12">
+ <div class="col-md-8 col-xs-12">
         <h1>Listado</h1>
         <table class="table">
-          <tr >
+          <tr>
             <th>Nombre</th>
             <th>Materia</th>
             <th>Cualificación</th>
           </tr>
-          <tr>
-            <th>{{name}}</th>
-            <th>{{materia}}</th>
+          <tr v-for="(student,key) in students" :key="student.id">
+            <th>{{student}}</th>
+            <th>{{student.signature}}</th>
+            <th>{{student.note}}</th>
           </tr>
           
         </table>
